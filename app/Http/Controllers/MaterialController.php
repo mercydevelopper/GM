@@ -12,10 +12,10 @@ class MaterialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+    
+    
+
+    //  function addMaterial
 
 
     public function addMaterial(Request $request)
@@ -27,10 +27,11 @@ class MaterialController extends Controller
             'Material' => $material
 
        ]);
-
-        
+    
     }
 
+
+    // function ListMaterial
 
     public function ListMaterial()
     {
@@ -40,7 +41,10 @@ class MaterialController extends Controller
     }
 
 
-     public function ListMaterialById($id)
+
+    // function ListMaterialById
+
+    public function ListMaterialById($id)
     { 
             $material = Material::find($id);
                if(is_null($material)){
@@ -55,9 +59,11 @@ class MaterialController extends Controller
     }
 
 
+    // function UpdateMaterial
 
     public function UpdateMaterial(Request $request, $id)
     {
+
       $material = Material::find($id);
 
                if(is_null($material)){
@@ -74,10 +80,11 @@ class MaterialController extends Controller
                   'message' => 'update success',
                   'Material' => $material
         ], 200);
-
-        
+ 
     }
 
+
+    // function DeleteMaterial
 
     public function DeleteMaterial(Request $request, $id)
     {

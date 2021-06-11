@@ -25,25 +25,23 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
+//login and register
+
 Route::post('/register',[AuthController::class, 'register']);
 
 Route::post('/login',[AuthController::class, 'login']);
 
 
-
+//securing 
 Route::group(['middleware'=>['auth:sanctum']], function(){
 
-    //
+    //users 
 
     Route::get('/userInfo',[AuthController::class, 'userInfo']);
 
     Route::get('/logout',[AuthController::class, 'logout']);
 
-
-});
-
-
-//
+// Category Route
 
 Route::post('/addCategory',[CategoryController::class, 'addCategory']);
 Route::get('/ListCategory',[CategoryController::class, 'ListCategory']);
@@ -52,7 +50,7 @@ Route::put('/UpdateCategory/{id}',[CategoryController::class, 'UpdateCategory'])
 Route::delete('/DeleteCategory/{id}',[CategoryController::class, 'DeleteCategory']);
 
 
-//
+// Provider Route
 
 Route::post('/addProvider',[PoviderController::class, 'addProvider']);
 Route::get('/ListProvider',[PoviderController::class, 'ListProvider']);
@@ -60,6 +58,7 @@ Route::get('/ListProviderById/{id}',[PoviderController::class, 'ListProviderById
 Route::put('/UpdateProvider/{id}',[PoviderController::class, 'UpdateProvider']);
 Route::delete('/DeleteProvider/{id}',[PoviderController::class, 'DeleteProvider']);
 
+//  Location Route
 
 Route::post('/addLocation',[LocationController::class, 'addLocation']);
 Route::get('/ListLocation',[LocationController::class, 'ListLocation']);
@@ -68,12 +67,21 @@ Route::put('/UpdateLocation/{id}',[LocationController::class, 'UpdateLocation'])
 Route::delete('/DeleteLocation/{id}',[LocationController::class, 'DeleteLocation']);
 
 
-
+//  Material Route
 
 Route::post('/addMaterial',[MaterialController::class, 'addMaterial']);
 Route::get('/ListMaterial',[MaterialController::class, 'ListMaterial']);
 Route::get('/ListMaterialById/{id}',[MaterialController::class, 'ListMaterialById']);
 Route::put('/UpdateMaterial/{id}',[MaterialController::class, 'UpdateMaterial']);
 Route::delete('/DeleteMaterial/{id}',[MaterialController::class, 'DeleteMaterial']);
+
+
+
+});
+
+
+//
+
+
 
 

@@ -14,6 +14,8 @@ class LocationController extends Controller
      *
      */
 
+    
+    //  function addLocation
 
     public function addLocation(Request $request)
     {
@@ -29,6 +31,8 @@ class LocationController extends Controller
     }
 
 
+    //  function ListLocation 
+
     public function ListLocation()
     {
       // Category::orderByDesc('created_at')->get(); pour le tri
@@ -37,8 +41,9 @@ class LocationController extends Controller
     }
 
 
+    // function ListLocationById
 
-     public function ListLocationById($id)
+    public function ListLocationById($id)
     { 
             $location = Location::find($id);
                if(is_null($location)){
@@ -53,6 +58,7 @@ class LocationController extends Controller
     }
 
 
+    //  function UpdateLocation
 
     public function UpdateLocation(Request $request, $id)
     {
@@ -76,6 +82,8 @@ class LocationController extends Controller
         
     }
 
+    
+    //  function DeleteLocation
 
     public function DeleteLocation(Request $request, $id)
     {

@@ -13,6 +13,9 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+    // function addCategory
+
     public function addCategory(Request $request)
     {
        $category = Category::create($request->all());
@@ -26,7 +29,7 @@ class CategoryController extends Controller
         
     }
 
-
+    //  function ListCategory
 
     public function ListCategory()
     {
@@ -35,6 +38,8 @@ class CategoryController extends Controller
        return response()->json(Category::all(), 200);
     }
 
+
+    // function ListCategoryById
 
     public function ListCategoryById($id)
     { 
@@ -51,6 +56,9 @@ class CategoryController extends Controller
     }
 
 
+
+    // function UpdateCategory
+    
     public function UpdateCategory(Request $request, $id)
     {
       $category = Category::find($id);
@@ -73,7 +81,8 @@ class CategoryController extends Controller
         
     }
 
-
+    
+    //  function DeleteCategory
 
     public function DeleteCategory(Request $request, $id)
     {
